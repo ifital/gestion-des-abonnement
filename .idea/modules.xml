@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/gestion des abonnement.iml" filepath="$PROJECT_DIR$/gestion des abonnement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gestion des abonnements.iml" filepath="$PROJECT_DIR$/gestion des abonnements.iml" />
     </modules>
   </component>
 </project>
