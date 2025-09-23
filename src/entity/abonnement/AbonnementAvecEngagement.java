@@ -1,8 +1,8 @@
-package entity;
+package entity.abonnement;
 
 import java.time.LocalDate;
 
-public class AbonnementAvecEngagement extends Abonnement{
+public class AbonnementAvecEngagement extends Abonnement {
 
     private int dureeEngagementMois;
 
