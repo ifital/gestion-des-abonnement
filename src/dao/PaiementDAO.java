@@ -13,6 +13,6 @@ public interface PaiementDAO {
     List<Paiement> findAll();
     void update(Paiement paiement);
     void delete(String id);
-    List<Paiement> findUnpaidAbonnment(String idAbonnement);
-    List<Paiement> findLastPaiment(int limit);
+    List<Paiement> findUnpaidByAbonnement(String idAbonnement);
+    List<Paiement> findLastPayments(int limit);
 }
