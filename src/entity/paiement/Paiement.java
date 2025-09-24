@@ -8,16 +8,16 @@ import java.util.UUID;
 
 public class Paiement {
     private String idPaiement;
-    private String idAbennement;
+    private String idAbonnement;
     private String dateEcheance;
     private String datePaiement;
     private TypePaiement typePaiement;
-    private StatutPaiement statutPaiement;
+    private StatutPaiement statut;
     private double montant;
 
     public Paiement(){
         this.idPaiement = UUID.randomUUID().toString();
-        this.statutPaiement = StatutPaiement.NON_PAYE;
+        this.statut = StatutPaiement.NON_PAYE;
     }
 
     public String getIdPaiement() {
@@ -28,12 +28,12 @@ public class Paiement {
         this.idPaiement = idPaiement;
     }
 
-    public String getIdAbennement() {
-        return idAbennement;
+    public String getIdAbonnement() {
+        return idAbonnement;
     }
 
-    public void setIdAbennement(String idAbennement) {
-        this.idAbennement = idAbennement;
+    public void setIdAbonnement(String idAbennement) {
+        this.idAbonnement = idAbennement;
     }
 
     public String getDateEcheance() {
@@ -60,12 +60,12 @@ public class Paiement {
         this.typePaiement = typePaiement;
     }
 
-    public StatutPaiement getStatutPaiement() {
-        return statutPaiement;
+    public StatutPaiement getStatut() {
+        return statut;
     }
 
-    public void setStatutPaiement(StatutPaiement statutPaiement) {
-        this.statutPaiement = statutPaiement;
+    public void setStatut(StatutPaiement statutPaiement) {
+        this.statut = statutPaiement;
     }
 
     public double getMontant() {
@@ -87,11 +87,11 @@ public class Paiement {
     public String toString() {
         return "Paiement{" +
                 "idPaiement='" + idPaiement + '\'' +
-                ", idAbennement='" + idAbennement + '\'' +
+                ", idAbennement='" + idAbonnement + '\'' +
                 ", dateEcheance='" + dateEcheance + '\'' +
                 ", datePaiement='" + datePaiement + '\'' +
                 ", typePaiement=" + typePaiement +
-                ", statutPaiement=" + statutPaiement +
+                ", statutPaiement=" + statut +
                 ", montant=" + montant +
                 '}';
     }

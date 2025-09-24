@@ -10,11 +10,11 @@ public abstract class Abonnement {
     protected double montantMensuel;
     protected LocalDate dateDebut;
     protected LocalDate dateFin;
-    protected StatutAbonnement status;
+    protected StatutAbonnement statut;
 
     public Abonnement (){
         this.id = UUID.randomUUID().toString();
-        this.status = StatutAbonnement.ACTIF;
+        this.statut = StatutAbonnement.ACTIF;
     }
 
     public Abonnement(String nomService, double montantMensuel, LocalDate dateDebut, LocalDate dateFin) {
@@ -64,12 +64,12 @@ public abstract class Abonnement {
         this.dateFin = dateFin;
     }
 
-    public StatutAbonnement getStatus() {
-        return status;
+    public StatutAbonnement getStatut() {
+        return statut;
     }
 
-    public void setStatus(StatutAbonnement status) {
-        this.status = status;
+    public void setStatut(StatutAbonnement status) {
+        this.statut = status;
     }
 
     public abstract String getTypeAbonnement();
@@ -82,7 +82,7 @@ public abstract class Abonnement {
                 ", montantMensuel=" + montantMensuel +
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
-                ", status=" + status +
+                ", status=" + statut +
                 '}';
     }
 }

@@ -12,7 +12,7 @@ public interface AbonnementDAO {
     List<Abonnement> findAll();
     void update(Abonnement abonnement);
     void delete(String id);
-    List<Abonnement> findActivSubscribtions();
+    List<Abonnement> findActiveSubscriptions();
     List<Abonnement> findByType(String type);
 
 }
