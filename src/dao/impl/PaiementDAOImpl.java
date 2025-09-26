@@ -7,7 +7,6 @@ import enums.TypePaiement;
 import entity.paiement.Paiement;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -182,11 +181,11 @@ public class PaiementDAOImpl implements PaiementDAO {
 
         paiement.setIdPaiement(rs.getString("idPaiement"));
         paiement.setIdAbonnement(rs.getString("idAbonnement"));
-        paiement.setDateEcheance(LocalDate.parse(String.valueOf(rs.getDate("dateEcheance").toLocalDate())));
+        paiement.setDateEcheance(rs.getDate("dateEcheance").toLocalDate());
 
         Date datePaiement = rs.getDate("datePaiement");
         if (datePaiement != null) {
-            paiement.setDatePaiement(LocalDate.parse(String.valueOf(datePaiement.toLocalDate())));
+            paiement.setDatePaiement(datePaiement.toLocalDate());
         }
 
         String typePaiement = rs.getString("typePaiement");

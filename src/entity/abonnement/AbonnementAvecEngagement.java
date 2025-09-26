@@ -3,7 +3,6 @@ package entity.abonnement;
 import java.time.LocalDate;
 
 public class AbonnementAvecEngagement extends Abonnement {
-
     private int dureeEngagementMois;
 
     public AbonnementAvecEngagement() {
@@ -30,5 +29,4 @@ public class AbonnementAvecEngagement extends Abonnement {
     public String toString() {
         return super.toString() + " - Engagement: " + dureeEngagementMois + " mois";
     }
-
-    }
+}

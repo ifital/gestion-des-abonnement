@@ -2,12 +2,12 @@ package service.impl;
 
 import dao.AbonnementDAO;
 import dao.PaiementDAO;
-
 import entity.abonnement.Abonnement;
-import enums.StatutAbonnement;
 import entity.paiement.Paiement;
+import enums.StatutAbonnement;
 import service.AbonnementService;
 import util.DateUtil;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -86,7 +86,7 @@ public class AbonnementServiceImpl implements AbonnementService {
             Optional<Abonnement> abonnementOpt = abonnementDAO.findById(id);
             if (abonnementOpt.isPresent()) {
                 Abonnement abonnement = abonnementOpt.get();
-                abonnement.setStatut(StatutAbonnement.RESELIE);
+                abonnement.setStatut(StatutAbonnement.RESILIE);
                 abonnement.setDateFin(LocalDate.now());
                 abonnementDAO.update(abonnement);
                 System.out.println("Abonnement résilié avec succès: " + abonnement.getNomService());
