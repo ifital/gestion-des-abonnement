@@ -1,4 +1,4 @@
-package entity.enums;
+package enums;
 
 public enum TypePaiement {
     CARTE_BANCAIRE,

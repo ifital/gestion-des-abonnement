@@ -1,6 +1,6 @@
 package entity.abonnement;
 
-import entity.enums.StatutAbonnement;
+import enums.StatutAbonnement;
 import java.time.LocalDate;
 import java.util.UUID;
 

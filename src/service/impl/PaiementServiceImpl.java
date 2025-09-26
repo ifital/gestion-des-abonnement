@@ -2,7 +2,7 @@ package service.impl;
 
 import dao.PaiementDAO;
 
-import entity.enums.StatutPaiement;
+import enums.StatutPaiement;
 import entity.paiement.Paiement;
 import service.PaiementService;
 import java.time.LocalDate;

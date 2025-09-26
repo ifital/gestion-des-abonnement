@@ -1,9 +1,9 @@
 package util;
 
 
-import entity.enums.StatutAbonnement;
-import entity.enums.StatutPaiement;
-import entity.enums.TypePaiement;
+import enums.StatutAbonnement;
+import enums.StatutPaiement;
+import enums.TypePaiement;
 
 import java.util.Arrays;
 import java.util.Optional;

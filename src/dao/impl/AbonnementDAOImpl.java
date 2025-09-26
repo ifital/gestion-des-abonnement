@@ -5,7 +5,7 @@ import dao.AbonnementDAO;
 import entity.abonnement.Abonnement;
 import entity.abonnement.AbonnementAvecEngagement;
 import entity.abonnement.AbonnementSansEngagement;
-import entity.enums.StatutAbonnement;
+import enums.StatutAbonnement;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,12 +13,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class AbonnementDAOImpl implements AbonnementDAO {
+
     @Override
     public void create(Abonnement abonnement) {
-        String sql = "INSERT INTO abonnement (id, nomService, montantMensuel, dateDebut, dateFin, statut, typeAbonnement, dureeEngagementMois) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO abonnement (id, nomService, montantMensuel, dateDebut, dateFin, statut, typeAbonnement, dureeEngagementMois) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try(Connection conn = DatabaseConfig.getConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql); ){
+        try (Connection conn = DatabaseConfig.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
             stmt.setString(1, abonnement.getId());
             stmt.setString(2, abonnement.getNomService());
             stmt.setDouble(3, abonnement.getMontantMensuel());
@@ -27,16 +29,16 @@ public class AbonnementDAOImpl implements AbonnementDAO {
             stmt.setString(6, abonnement.getStatut().name());
             stmt.setString(7, abonnement.getTypeAbonnement());
 
-            if (abonnement instanceof AbonnementAvecEngagement){
+            if (abonnement instanceof AbonnementAvecEngagement) {
                 stmt.setInt(8, ((AbonnementAvecEngagement) abonnement).getDureeEngagementMois());
-            }else {
+            } else {
                 stmt.setNull(8, Types.INTEGER);
             }
+
             stmt.executeUpdate();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("Erreur lors de la création de l'abonnement", e);
         }
-
     }
 
     @Override
@@ -59,7 +61,6 @@ public class AbonnementDAOImpl implements AbonnementDAO {
         }
     }
 
-
     @Override
     public List<Abonnement> findAll() {
         String sql = "SELECT * FROM abonnement ORDER BY nomService";
@@ -74,7 +75,7 @@ public class AbonnementDAOImpl implements AbonnementDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erreur lors de la recuperation des abonnements", e);
+            throw new RuntimeException("Erreur lors de la récupération des abonnements", e);
         }
 
         return abonnements;
@@ -103,7 +104,7 @@ public class AbonnementDAOImpl implements AbonnementDAO {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erreur lors de la mise à jour de l'abonnment", e);
+            throw new RuntimeException("Erreur lors de la mise à jour de l'abonnement", e);
         }
     }
 
@@ -118,7 +119,7 @@ public class AbonnementDAOImpl implements AbonnementDAO {
             stmt.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erreur lors de la suppression de l abonnement", e);
+            throw new RuntimeException("Erreur lors de la suppression de l'abonnement", e);
         }
     }
 

@@ -1,7 +1,7 @@
 package entity.paiement;
 
-import entity.enums.StatutPaiement;
-import entity.enums.TypePaiement;
+import enums.StatutPaiement;
+import enums.TypePaiement;
 
 import java.time.LocalDate;
 import java.util.UUID;
