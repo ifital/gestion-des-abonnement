@@ -9,6 +9,8 @@ L’objectif est de pratiquer la **programmation orientée objet (POO)**, la ges
 ---
 
 ## 🏗 Structure du projet
+```bash
+
 
 Gestion des abonnements et paiements/
 ├── src/
@@ -41,6 +43,7 @@ Gestion des abonnements et paiements/
 │ ├── DateUtil.java
 │ └── ValidationUtil.java
 └── Main.java
+```
 
 ---
 
