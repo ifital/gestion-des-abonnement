@@ -97,5 +97,5 @@ javac -d bin src/ui/ConsoleUI.java
 ---
 ## Captures d'écran
 
-<img width="611" height="442" alt="image" src="https://github.com/user-attachments/assets/2ee0b490-3ace-4d39-8101-22221ace5464" />
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/2ee0b490-3ace-4d39-8101-22221ace5464" />
 
