@@ -51,9 +51,14 @@ public class Paiement {
 
     @Override
     public String toString() {
-        return String.format("Paiement [%.2f€] - Échéance: %s - Payé le: %s - Statut: %s",
-                montant, dateEcheance,
-                datePaiement != null ? datePaiement.toString() : "Non payé",
-                statut);
+        return "Paiement{" +
+                "idPaiement='" + idPaiement + '\'' +
+                ", idAbonnement='" + idAbonnement + '\'' +
+                ", dateEcheance=" + dateEcheance +
+                ", datePaiement=" + datePaiement +
+                ", typePaiement=" + typePaiement +
+                ", statut=" + statut +
+                ", montant=" + montant +
+                '}';
     }
 }
