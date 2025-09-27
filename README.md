@@ -1,56 +1,90 @@
-# Gestionnaire d'Abonnements et Paiements
+# 📦 Gestion des Abonnements et Paiements - Java Console
 
-## Description
+## 📌 Description du projet
+Ce projet est une application console en Java qui permet de gérer des **abonnements** et leurs **paiements**.  
+Elle offre la possibilité de créer différents types d’abonnements (avec ou sans engagement), d’enregistrer et consulter les paiements, de générer des rapports financiers (mensuels et annuels), ainsi que de détecter automatiquement les impayés et retards.
 
-Application console Java pour gérer des abonnements et leurs paiements.  
-Elle permet de créer, modifier, supprimer et lister des abonnements, enregistrer des paiements, générer des rapports mensuels et annuels, et analyser les paiements impayés.
-
-L'architecture suit le modèle **DAO / Service**, avec des entités pour les abonnements (`Abonnement`, `AbonnementAvecEngagement`, `AbonnementSansEngagement`) et les paiements (`Paiement`). Des utilitaires sont inclus pour la validation des données et la gestion des dates.
-
----
-
-## Fonctionnalités
-
-### Gestion des abonnements
-- Créer un abonnement (avec ou sans engagement)
-- Lister tous les abonnements
-- Rechercher un abonnement par ID
-- Modifier un abonnement
-- Supprimer ou résilier un abonnement
-- Lister uniquement les abonnements actifs
-- Générer automatiquement les échéances
-
-### Gestion des paiements
-- Enregistrer un paiement (date et type)
-- Afficher les paiements d’un abonnement
-- Modifier un paiement (statut, date, type)
-- Supprimer un paiement
-- Consulter les paiements impayés
-- Afficher la somme totale payée pour un abonnement
-- Afficher les 5 derniers paiements
-- Lister tous les paiements
-
-### Rapports et analyses
-- Rapport mensuel et annuel des paiements
-- Analyse des paiements impayés
-- Synthèse globale :
-  - Nombre d’abonnements actifs/inactifs
-  - Montant total des abonnements actifs
-  - Nombre et montant des paiements effectués et impayés
-  - Répartition des abonnements par type
-
-### Vérification automatique
-- Marquer automatiquement les paiements en retard
+L’objectif est de pratiquer la **programmation orientée objet (POO)**, la gestion des exceptions, l’utilisation de **DAO / Services**, et l’exploitation des **Streams Java** pour traiter les données.
 
 ---
 
-## Technologies utilisées
-- Java 8
-- DAO / Service
-- Streams Java
-- `java.time.LocalDate`
-- Interface console (`Scanner`)
+## 🏗 Structure du projet
+
+Gestion des abonnements et paiements/
+├── src/
+│ ├── ui/
+│ │ └── ConsoleUI.java
+│ ├── dao/
+│ │ ├── AbonnementDAO.java
+│ │ └── PaiementDAO.java
+│ ├── dao/impl/
+│ │ ├── AbonnementDAOImpl.java
+│ │ └── PaiementDAOImpl.java
+│ ├── entity/
+│ │ ├── abonnement/
+│ │ │ ├── Abonnement.java
+│ │ │ ├── AbonnementAvecEngagement.java
+│ │ │ └── AbonnementSansEngagement.java
+│ │ └── paiement/
+│ │ └── Paiement.java
+│ ├── enums/
+│ │ ├── StatutAbonnement.java
+│ │ ├── StatutPaiement.java
+│ │ └── TypePaiement.java
+│ ├── service/
+│ │ ├── AbonnementService.java
+│ │ └── PaiementService.java
+│ ├── service/impl/
+│ │ ├── AbonnementServiceImpl.java
+│ │ └── PaiementServiceImpl.java
+│ └── util/
+│ ├── DateUtil.java
+│ └── ValidationUtil.java
+└── Main.java
 
 ---
 
-## Structure du projet
+## ⚙️ Fonctionnalités
+
+### 1. Gestion des abonnements
+- Créer un abonnement avec ou sans engagement.
+- Rechercher un abonnement par son ID.
+- Modifier et résilier un abonnement.
+- Lister tous les abonnements (actifs ou inactifs).
+- Générer automatiquement les **échéances** d’un abonnement.
+
+### 2. Gestion des paiements
+- Enregistrer un paiement (date, montant, type).
+- Modifier ou supprimer un paiement.
+- Consulter les paiements liés à un abonnement.
+- Lister les **5 derniers paiements**.
+- Calculer la **somme totale payée** pour un abonnement.
+- Détecter et afficher les **paiements impayés**.
+
+### 3. Rapports et analyses
+- Générer un **rapport mensuel** des paiements.
+- Générer un **rapport annuel** des paiements.
+- Analyser les **impayés** et marquer automatiquement les retards.
+- Obtenir une **synthèse globale** :
+  - Nombre d’abonnements actifs et résiliés.
+  - Montant total des abonnements actifs.
+  - Montant total payé et impayé.
+  - Répartition des abonnements par type.
+
+---
+
+## 🛠 Technologies utilisées
+- **Java 8**
+- **DAO / Service**
+- **Collections & Streams API**
+- **LocalDate** pour la gestion des dates
+- **Scanner (CLI)** pour l’interaction utilisateur
+
+---
+
+## 🚀 Instructions pour exécuter le projet
+
+1. **Cloner le dépôt** ou copier les fichiers dans un projet IntelliJ IDEA, Eclipse ou VS Code.
+2. **Compiler le projet** :
+```bash
+javac -d bin src/ui/ConsoleUI.java
