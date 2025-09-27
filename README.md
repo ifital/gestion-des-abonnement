@@ -85,9 +85,17 @@ Gestion des abonnements et paiements/
 
 ---
 
+
 ## 🚀 Instructions pour exécuter le projet
 
 1. **Cloner le dépôt** ou copier les fichiers dans un projet IntelliJ IDEA, Eclipse ou VS Code.
 2. **Compiler le projet** :
 ```bash
 javac -d bin src/ui/ConsoleUI.java
+```
+
+---
+## Captures d'écran
+
+<img width="611" height="442" alt="image" src="https://github.com/user-attachments/assets/2ee0b490-3ace-4d39-8101-22221ace5464" />
+
